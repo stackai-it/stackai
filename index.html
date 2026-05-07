@@ -1,0 +1,2412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="StackAI: IT and AI operations for small business through enterprise. Lean cost, secure data, cloud, collaboration, automation, security." />
+  <meta name="theme-color" content="#0063b1" />
+  <meta name="application-name" content="StackAI" />
+  <title>StackAI · IT services &amp; AI operations | Lean cost, secure data</title>
+  <link rel="canonical" href="https://stackai.eu.org/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="StackAI" />
+  <meta property="og:url" content="https://stackai.eu.org/" />
+  <meta property="og:title" content="StackAI · IT services &amp; AI operations | Lean cost, secure data" />
+  <meta property="og:description" content="StackAI: IT and AI operations for small business through enterprise. Lean cost, secure data, cloud, collaboration, automation, security." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="StackAI · IT services &amp; AI operations | Lean cost, secure data" />
+  <meta name="twitter:description" content="StackAI: IT and AI operations for small business through enterprise. Lean cost, secure data, cloud, collaboration, automation, security." />
+  <style>
+/* StackAI: professional + technical depth */
+:root {
+  --bg: #fafbfc;
+  --bg-subtle: #f0f2f5;
+  --bg-muted: #f5f7fa;
+  --bg-card: #ffffff;
+  --bg-terminal: #0f1419;
+  --border: #e2e5eb;
+  --border-strong: #c8ced8;
+  --text: #1a1d21;
+  --text-secondary: #3d4349;
+  --text-muted: #5c6370;
+  --accent: #0063b1;
+  --accent-bright: #0078d4;
+  --accent-hover: #005a9e;
+  --accent-dark: #004578;
+  --accent-glow: rgba(0, 120, 212, 0.12);
+  --teal: #0d7377;
+  --focus-ring: rgba(0, 99, 177, 0.35);
+  --shadow-sm: 0 1px 2px rgba(15, 20, 25, 0.05);
+  --shadow-md: 0 8px 24px rgba(15, 20, 25, 0.08);
+  --shadow-terminal: 0 24px 48px rgba(15, 20, 25, 0.18);
+  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --radius: 8px;
+  --radius-sm: 6px;
+  --radius-lg: 12px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 200;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  box-shadow: var(--shadow-md);
+  transition: top 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+::selection {
+  background: rgba(0, 99, 177, 0.22);
+  color: var(--text);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.btn:focus-visible {
+  outline-offset: 3px;
+}
+
+.page-gradient {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 100% 80% at 100% -20%, rgba(0, 120, 212, 0.07), transparent 50%),
+    radial-gradient(ellipse 80% 60% at -10% 30%, rgba(13, 115, 119, 0.05), transparent 45%);
+}
+
+body > *:not(.page-gradient):not(.skip-link) {
+  position: relative;
+  z-index: 1;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.wrap {
+  width: min(1140px, 100% - 2.5rem);
+  margin-inline: auto;
+}
+
+/* Header */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 251, 252, 0.88);
+  backdrop-filter: blur(12px) saturate(1.2);
+  border-bottom: 1px solid var(--border);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  gap: 1rem;
+}
+
+.header__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.header__brand .logo {
+  line-height: 1.15;
+}
+
+.header__tagline {
+  margin: 0;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.03em;
+  line-height: 1.35;
+  max-width: 16rem;
+  font-family: var(--font-mono);
+}
+
+.tagline-accent {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  background: linear-gradient(105deg, var(--accent-dark) 0%, var(--accent-bright) 55%, var(--teal) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (max-width: 400px) {
+  .header__tagline {
+    font-size: 0.625rem;
+    max-width: 11rem;
+  }
+}
+
+.logo {
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.logo__ai {
+  color: var(--accent-bright);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nav a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.nav a:hover {
+  color: var(--text);
+}
+
+.nav__cta {
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(180deg, var(--accent-bright), var(--accent));
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.nav__cta:hover {
+  filter: brightness(1.05);
+  color: #ffffff !important;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 0.65rem;
+  cursor: pointer;
+}
+
+.nav-toggle__bar {
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 1px;
+}
+
+@media (max-width: 960px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem 1.25rem 1.25rem;
+    background: rgba(255, 255, 255, 0.98);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+    gap: 0.65rem;
+    display: none;
+  }
+
+  .nav.is-open {
+    display: flex;
+  }
+
+  .nav__cta {
+    text-align: center;
+    margin-top: 0.35rem;
+  }
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(2rem, 5vw, 3rem);
+  overflow: hidden;
+  background: transparent;
+}
+
+.hero__mesh {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(0, 120, 212, 0.06) 0%, transparent 42%),
+    radial-gradient(circle at 85% 10%, rgba(13, 115, 119, 0.05) 0%, transparent 38%);
+  pointer-events: none;
+}
+
+.hero__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 99, 177, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 99, 177, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: linear-gradient(to bottom, black 0%, transparent 92%);
+  pointer-events: none;
+}
+
+.hero__layout {
+  display: grid;
+  grid-template-columns: 1fr minmax(280px, 380px);
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .hero__layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hero__main {
+  min-width: 0;
+}
+
+/* AI-first priority strip */
+.hero__focus {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem 1rem;
+  margin: 0 0 1.25rem;
+  padding: 0.65rem 0.85rem 0.7rem 0.75rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(0, 99, 177, 0.14);
+  background: linear-gradient(135deg, rgba(0, 120, 212, 0.07) 0%, rgba(255, 255, 255, 0.92) 42%, var(--bg-muted) 100%);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+}
+
+.hero__focus-pill {
+  flex-shrink: 0;
+  align-self: center;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent-dark) 0%, var(--accent-bright) 55%, var(--teal) 100%);
+  box-shadow: 0 2px 8px rgba(0, 99, 177, 0.28);
+}
+
+.hero__focus-text {
+  margin: 0;
+  flex: 1;
+  min-width: 0;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.hero__focus-text strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+@media (max-width: 520px) {
+  .hero__focus {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero__focus-pill {
+    align-self: flex-start;
+  }
+}
+
+.hero__title {
+  font-family: var(--font);
+  font-size: clamp(1.85rem, 3.8vw, 2.65rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  margin: 0 0 1.125rem;
+  color: var(--text);
+  text-wrap: balance;
+}
+
+.hero__intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin: 0 0 1.5rem;
+  max-width: 38rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.hero__intro-item {
+  position: relative;
+  padding: 1rem 1.1rem 1.05rem 1.35rem;
+  min-width: 0;
+}
+
+.hero__intro-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65rem;
+  bottom: 0.65rem;
+  width: 3px;
+  border-radius: 0 2px 2px 0;
+  background: var(--accent-bright);
+}
+
+.hero__intro-item--security::before {
+  background: linear-gradient(180deg, var(--teal) 0%, #0d9488 100%);
+}
+
+.hero__intro-item--cost {
+  border-right: 1px solid var(--border);
+  background: linear-gradient(165deg, rgba(0, 120, 212, 0.06) 0%, transparent 55%);
+}
+
+.hero__intro-item--security {
+  background: linear-gradient(195deg, rgba(13, 115, 119, 0.06) 0%, transparent 50%);
+}
+
+.hero__intro-heading {
+  margin: 0 0 0.35rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--text);
+}
+
+.hero__intro-heading strong {
+  font-weight: 700;
+  color: var(--accent-dark);
+}
+
+.hero__intro-item--security .hero__intro-heading strong {
+  color: #0f766e;
+}
+
+.hero__intro-detail {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+@media (max-width: 640px) {
+  .hero__intro {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__intro-item--cost {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+.gradient-text {
+  color: var(--accent-dark);
+  background: linear-gradient(105deg, var(--accent-dark) 0%, var(--accent-bright) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:active {
+  transform: scale(0.99);
+}
+
+.btn--primary {
+  background: linear-gradient(180deg, var(--accent-bright), var(--accent));
+  color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 6px rgba(0, 99, 177, 0.25);
+}
+
+.btn--primary:hover {
+  filter: brightness(1.06);
+  box-shadow: 0 4px 14px rgba(0, 99, 177, 0.3);
+}
+
+.btn--ghost {
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+}
+
+.btn--ghost:hover {
+  border-color: var(--accent-bright);
+  color: var(--accent-dark);
+  background: #ffffff;
+}
+
+.btn--lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
+
+.hero__stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+.hero__who {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem 0.85rem;
+  padding: 0.85rem 1.15rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(0, 99, 177, 0.18);
+  background: linear-gradient(180deg, #ffffff 0%, var(--bg-muted) 100%);
+  box-shadow: var(--shadow-sm);
+}
+
+.hero__who-mark {
+  flex-shrink: 0;
+  margin-top: 0.12em;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--accent-bright);
+}
+
+.hero__who-text {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.hero__who-text strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.hero__stack .hero-panel {
+  margin-top: 0;
+}
+
+.hero__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.875rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+}
+
+.hero__stats li {
+  padding: 1rem 1rem;
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.hero__stats li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: linear-gradient(90deg, var(--accent-bright), var(--teal));
+  opacity: 0.85;
+}
+
+.hero__stats--promise li:nth-child(2)::before {
+  background: linear-gradient(90deg, var(--teal), #2dd4bf);
+}
+
+.hero__stats--promise li:nth-child(2) strong {
+  color: #0f766e;
+}
+
+.hero__stats strong {
+  display: block;
+  font-family: var(--font);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+
+.hero__stats span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+@media (max-width: 640px) {
+  .hero__stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Terminal */
+.hero__aside {
+  position: relative;
+}
+
+.terminal {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-terminal), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  background: var(--bg-terminal);
+}
+
+.terminal__chrome {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1rem;
+  background: linear-gradient(180deg, #1a222d 0%, #151b24 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.terminal__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.terminal__dot--r {
+  background: #ff5f57;
+}
+.terminal__dot--y {
+  background: #febc2e;
+}
+.terminal__dot--g {
+  background: #28c840;
+}
+
+.terminal__title {
+  flex: 1;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.terminal__body {
+  margin: 0;
+  padding: 0.95rem 0.85rem 1.1rem;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  line-height: 1.6;
+  color: #c5cdd8;
+  overflow-x: auto;
+}
+
+@media (min-width: 400px) {
+  .terminal__body {
+    font-size: 0.72rem;
+  }
+}
+
+.terminal__body code {
+  font-family: inherit;
+}
+
+.terminal__prompt {
+  color: #5ad4e6;
+  font-weight: 600;
+}
+
+.terminal__ok {
+  color: #3ecf8e;
+}
+
+.terminal__warn {
+  color: #f5a623;
+}
+
+.terminal__dim {
+  color: #8b98a5;
+}
+
+.terminal__muted {
+  color: #5c6773;
+}
+
+.terminal__accent {
+  color: #7fd3ff;
+  font-weight: 600;
+}
+
+/* Hero panel (practice + platforms, single card) */
+.hero-panel {
+  margin-top: clamp(1.75rem, 4vw, 2.75rem);
+  padding: clamp(1.35rem, 3vw, 1.55rem) clamp(1.25rem, 3vw, 1.6rem) clamp(1.45rem, 3vw, 1.65rem);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, #ffffff 0%, var(--bg-muted) 100%);
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-panel__section {
+  margin: 0;
+}
+
+.hero-panel__heading {
+  margin: 0 0 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+}
+
+.hero-panel__sub {
+  margin: -0.35rem 0 0.75rem;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.hero-panel__lead {
+  margin: 0 0 0.85rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.hero-panel__icon {
+  color: var(--accent-bright);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  flex-shrink: 0;
+  margin-top: 0.12em;
+}
+
+.hero-panel__lead-text {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.hero-panel__lead-text strong {
+  color: var(--text);
+}
+
+.hero-panel__divider {
+  height: 1px;
+  margin: 1.15rem 0;
+  background: linear-gradient(90deg, transparent, var(--border-strong) 12%, var(--border-strong) 88%, transparent);
+}
+
+.hero-panel__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-panel__chips--practices li {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.32rem 0.55rem;
+  border-radius: 4px;
+  color: var(--accent-dark);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 99, 177, 0.16);
+}
+
+.hero-panel__chips--stack li {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(0, 99, 177, 0.06);
+  border: 1px solid rgba(0, 99, 177, 0.12);
+  white-space: nowrap;
+}
+
+@media (min-width: 900px) {
+  .hero-panel {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0 1.35rem;
+    align-items: stretch;
+  }
+
+  .hero-panel__section:first-of-type {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .hero-panel__divider {
+    grid-column: 2;
+    grid-row: 1;
+    width: 1px;
+    height: auto;
+    min-height: 5rem;
+    margin: 0;
+    align-self: stretch;
+    background: linear-gradient(180deg, transparent 0%, var(--border-strong) 12%, var(--border-strong) 88%, transparent 100%);
+  }
+
+  .hero-panel__section:last-of-type {
+    grid-column: 3;
+    grid-row: 1;
+  }
+}
+
+/* Sections */
+.section {
+  padding: clamp(3.25rem, 6.5vw, 5.5rem) 0;
+}
+
+.section--alt {
+  background: var(--bg-subtle);
+}
+
+.section--surface {
+  background: linear-gradient(180deg, #ffffff 0%, var(--bg-muted) 100%);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.section__kicker {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin: 0 0 0.75rem;
+}
+
+.section__kicker--center {
+  text-align: center;
+}
+
+.section__head .section__kicker {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section__head {
+  text-align: center;
+  max-width: 42rem;
+  margin: 0 auto 3rem;
+}
+
+.section__title {
+  font-family: var(--font);
+  font-size: clamp(1.55rem, 2.6vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin: 0 0 0.875rem;
+  color: var(--text);
+  text-wrap: balance;
+}
+
+.section__title--left {
+  text-align: left;
+}
+
+.section__title--line {
+  padding-left: 1rem;
+  border-left: 3px solid var(--accent-bright);
+}
+
+.section__desc {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 1.0625rem;
+}
+
+.section__desc--left {
+  text-align: left;
+}
+
+.feature-list--dense li {
+  margin-bottom: 0.85rem;
+}
+
+/* Split */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: center;
+}
+
+.split--surface {
+  align-items: start;
+}
+
+.split--reverse .split__text {
+  order: 2;
+}
+
+.split--reverse .split__visual,
+.split--reverse .metric-cards {
+  order: 1;
+}
+
+@media (max-width: 860px) {
+  .split,
+  .split--reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .split--reverse .split__text,
+  .split--reverse .metric-cards {
+    order: unset;
+  }
+
+  .split__visual--first-mobile {
+    order: -1;
+  }
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+}
+
+.feature-list li {
+  position: relative;
+  padding-left: 1.125rem;
+  margin-bottom: 1rem;
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+.feature-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 1px;
+  background: linear-gradient(135deg, var(--accent-bright), var(--teal));
+}
+
+.feature-list strong {
+  display: block;
+  color: var(--text);
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+/* Diagram */
+.diagram {
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  box-shadow: var(--shadow-md);
+}
+
+.diagram--setup {
+  text-align: center;
+}
+
+.diagram__node--root {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, rgba(0, 120, 212, 0.1), rgba(13, 115, 119, 0.08));
+  border: 1px solid rgba(0, 120, 212, 0.2);
+  color: var(--accent-dark);
+  margin-bottom: 0.5rem;
+}
+
+.diagram__branch {
+  position: relative;
+  padding-top: 1rem;
+}
+
+.diagram__edge {
+  display: block;
+  width: 2px;
+  height: 12px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, var(--accent-bright), var(--border-strong));
+  border-radius: 1px;
+}
+
+.diagram__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.65rem;
+}
+
+.diagram__node--sm {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  padding: 0.4rem 0.65rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-muted);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+/* Collab board (compact rows) */
+.collab-board {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.collab-board__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.65rem 1rem;
+  padding: 0.75rem 1rem 0.8rem;
+  background: linear-gradient(135deg, rgba(0, 99, 177, 0.06) 0%, rgba(255, 255, 255, 0.98) 50%, rgba(13, 115, 119, 0.05) 100%);
+  border-bottom: 1px solid var(--border);
+}
+
+.collab-board__head-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.collab-board__badge {
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  background: linear-gradient(180deg, var(--accent-bright), var(--accent));
+  color: #fff;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.collab-board__title {
+  margin: 0 0 0.15rem;
+  font-family: var(--font);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.collab-board__lede {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.35;
+  color: var(--text-muted);
+}
+
+.collab-board__rows {
+  list-style: none;
+  margin: 0;
+  padding: 0.15rem 0 0.15rem;
+}
+
+.collab-board__row {
+  margin: 0;
+  padding: 0.5rem 1rem 0.55rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.collab-board__row:last-child {
+  border-bottom: none;
+}
+
+.collab-board__row-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.65rem;
+  margin-bottom: 0.3rem;
+}
+
+.collab-board__topic {
+  flex: 0 0 auto;
+  min-width: min(100%, 9.5rem);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.collab-board__vendors {
+  flex: 1 1 12rem;
+  min-width: 0;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--text-secondary);
+  line-height: 1.35;
+}
+
+.collab-board__focus {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.45rem 0.55rem;
+  margin: 0;
+  padding: 0.28rem 0.5rem 0.3rem 0.45rem;
+  border-radius: 4px;
+  background: rgba(0, 99, 177, 0.05);
+  border: 1px solid rgba(0, 99, 177, 0.1);
+  border-left: 3px solid var(--accent-bright);
+}
+
+.collab-board__focus-label {
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.collab-board__focus-text {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 420px) {
+  .collab-board__row-line {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+
+  .collab-board__topic {
+    min-width: 0;
+  }
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  gap: 1.35rem;
+}
+
+.cards--3 {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.card {
+  padding: 1.35rem 1.5rem;
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  position: relative;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: linear-gradient(90deg, var(--accent-bright), var(--teal));
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.card:hover {
+  border-color: rgba(0, 120, 212, 0.28);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+.card--featured {
+  grid-column: 1 / -1;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 0 0.75rem;
+  align-items: start;
+}
+
+.card--featured .card__tag {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+
+.card--featured .card__icon {
+  grid-column: 1;
+  grid-row: 2;
+  margin-bottom: 0;
+  align-self: start;
+  line-height: 1.2;
+}
+
+.card--featured .card__title {
+  grid-column: 2;
+  grid-row: 2;
+  margin: 0;
+}
+
+.card--featured .card__text {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  margin-top: 0.35rem;
+}
+
+@media (min-width: 720px) {
+  .card--featured {
+    grid-template-columns: auto minmax(12rem, 1fr) minmax(0, 2fr);
+    grid-template-rows: auto auto;
+    gap: 0 1rem;
+  }
+
+  .card--featured .card__text {
+    grid-column: 3;
+    grid-row: 2;
+    margin-top: 0;
+  }
+}
+
+.card__tag {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.5rem;
+}
+
+.card__icon {
+  font-size: 1.25rem;
+  margin-bottom: 0.65rem;
+  color: var(--accent-bright);
+  font-weight: 600;
+}
+
+.card__title {
+  font-family: var(--font);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+  color: var(--text);
+}
+
+.card__text {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* Orb / glass */
+.orb-stack {
+  position: relative;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(48px);
+  opacity: 0.5;
+}
+
+.orb--1 {
+  width: 200px;
+  height: 200px;
+  background: #7ec8ff;
+  top: 10%;
+  left: 12%;
+}
+
+.orb--2 {
+  width: 180px;
+  height: 180px;
+  background: #9ee5dc;
+  bottom: 12%;
+  right: 10%;
+}
+
+.orb--3 {
+  width: 120px;
+  height: 120px;
+  background: #b8d4f0;
+  top: 38%;
+  right: 22%;
+}
+
+.glass-panel {
+  position: relative;
+  z-index: 2;
+  padding: 1.5rem 1.75rem;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  max-width: 300px;
+}
+
+.glass-panel--tech {
+  backdrop-filter: blur(8px);
+}
+
+.glass-panel__label {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 1rem;
+}
+
+.glass-panel__steps {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  line-height: 1.65;
+}
+
+.glass-panel__steps li {
+  margin-bottom: 0.5rem;
+  padding-left: 0;
+}
+
+.inline-code {
+  font-family: var(--font-mono);
+  font-size: 0.8em;
+  font-weight: 500;
+  color: var(--accent-dark);
+  background: rgba(0, 99, 177, 0.08);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+/* Timeline */
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  position: relative;
+}
+
+@media (max-width: 900px) {
+  .timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+}
+
+.timeline__item {
+  padding: 1.35rem 1.25rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 1.25rem;
+  right: 1.25rem;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-bright), transparent);
+  opacity: 0.35;
+  border-radius: 1px;
+}
+
+.timeline__step {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.timeline__item h3 {
+  font-size: 0.975rem;
+  font-weight: 600;
+  margin: 0.625rem 0 0.5rem;
+  color: var(--text);
+}
+
+.timeline__item p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* Metrics */
+.metric-cards {
+  display: grid;
+  gap: 1rem;
+}
+
+.metric-card {
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.metric-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: rgba(0, 120, 212, 0.2);
+}
+
+.metric-card__value {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.metric-card__label {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0 0;
+}
+
+.checklist--tight li {
+  font-size: 0.9rem;
+}
+
+.checklist li {
+  padding: 0.5rem 0 0.5rem 1.625rem;
+  position: relative;
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.checklist li:last-child {
+  border-bottom: 0;
+}
+
+.checklist li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--teal);
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+/* Contact */
+.section--contact {
+  background: linear-gradient(180deg, var(--bg-subtle) 0%, var(--bg-muted) 100%);
+  border-top: 1px solid var(--border);
+}
+
+.contact {
+  display: block;
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+.contact--unified {
+  text-align: center;
+}
+
+.contact__panel {
+  padding: clamp(2rem, 4vw, 2.75rem);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact__panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-bright), var(--teal));
+}
+
+.contact__panel--unified {
+  padding-bottom: clamp(1.75rem, 3vw, 2.25rem);
+}
+
+.contact__heading {
+  margin: 0 0 1rem;
+}
+
+.contact__lead {
+  margin: 0 0 1.5rem;
+  color: var(--text-muted);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.contact__lead--center {
+  text-align: center;
+  max-width: 52ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact__single-action {
+  margin-top: 0.25rem;
+}
+
+.contact__mailto {
+  color: var(--accent-bright);
+  font-weight: 600;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.contact__mailto:hover {
+  text-decoration: underline;
+  color: var(--accent-hover);
+}
+
+.contact__direct {
+  margin: 1rem 0 0;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem 0.5rem;
+}
+
+.contact__direct-label {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.btn--xl {
+  padding: 0.875rem 2rem;
+  font-size: 1.0625rem;
+  border-radius: var(--radius-sm);
+}
+
+.link {
+  color: var(--accent-bright);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: underline;
+  color: var(--accent-hover);
+}
+
+/* Footer */
+.footer {
+  padding: 0;
+  border-top: 1px solid var(--border);
+  background: linear-gradient(165deg, #e8ecf2 0%, #dfe5ee 45%, #d5dce6 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+.footer__wrap {
+  padding: 1.5rem 0 0;
+}
+
+.footer__highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer__highlight {
+  margin: 0;
+  padding: 1.15rem 1.2rem 1.2rem;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 20px rgba(15, 25, 40, 0.07), 0 1px 3px rgba(0, 0, 0, 0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer__highlight::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.footer__highlight--cost::before {
+  background: linear-gradient(90deg, var(--accent-bright), #4a9eff);
+}
+
+.footer__highlight--sec::before {
+  background: linear-gradient(90deg, var(--teal), #2dd4bf);
+}
+
+.footer__highlight--ai::before {
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+}
+
+.footer__highlight-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 0.4rem;
+}
+
+.footer__highlight-title {
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 0.45rem;
+  letter-spacing: -0.02em;
+}
+
+.footer__highlight-text {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.footer__lower {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  padding: 1.1rem 0 1.35rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.footer__brand-block {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+}
+
+.logo--footer {
+  font-size: 1.125rem;
+}
+
+.footer__tagline {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  letter-spacing: 0.03em;
+  max-width: 18rem;
+  font-family: var(--font-mono);
+}
+
+.footer__links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+}
+
+.footer__links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.footer__links a:hover {
+  color: var(--accent-bright);
+}
+
+.footer__copy {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  flex-shrink: 0;
+}
+
+.footer__copy time {
+  font: inherit;
+  color: inherit;
+}
+
+.footer__copyright {
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.footer__rights {
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .footer__highlights {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.15rem;
+  }
+
+  .footer__lower {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    padding: 1rem 0 1.2rem;
+  }
+
+  .footer__links {
+    justify-content: center;
+    padding-top: 0.25rem;
+  }
+
+  .footer__copy {
+    align-self: center;
+  }
+
+  .footer__brand-block {
+    align-items: center;
+    align-self: center;
+    text-align: center;
+  }
+
+  .footer__tagline {
+    max-width: 20rem;
+  }
+}
+
+/* Reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="page-gradient" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="header">
+    <div class="wrap header__inner">
+      <div class="header__brand">
+        <a class="logo" href="https://stackai.eu.org/" aria-label="StackAI, home">Stack<span class="logo__ai">AI</span></a>
+        <p class="header__tagline"><span class="tagline-accent">Lean IT</span>. Sealed data. AI-native.</p>
+      </div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+      <nav id="primary-nav" class="nav">
+        <a href="#services">Services</a>
+        <a href="#build">IT setup</a>
+        <a href="#collab">Collaboration</a>
+        <a href="#ai">AI &amp; Automation</a>
+        <a href="#transform">Transformation</a>
+        <a href="#managed">Managed IT</a>
+        <a href="#contact" class="nav__cta" title="Strategy, delivery, managed services, or collaboration across the full IT lifecycle">Talk to experts</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero__mesh" aria-hidden="true"></div>
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="wrap hero__layout">
+        <div class="hero__main">
+          <div class="hero__focus" role="group" aria-labelledby="hero-focus-label">
+            <span class="hero__focus-pill" id="hero-focus-label">AI-first delivery</span>
+            <p class="hero__focus-text">
+              <strong>AI and automation</strong> at the core: leaner workflows, lower run-rate cost, guardrails on data and access. One program across cloud, security, collaboration, and managed IT.
+            </p>
+          </div>
+          <h1 class="hero__title">
+            Cut IT cost and complexity with <span class="gradient-text">AI and automation</span> that pay for themselves
+          </h1>
+          <div class="hero__intro">
+            <div class="hero__intro-item hero__intro-item--cost">
+              <p class="hero__intro-heading"><strong>Lower spend</strong></p>
+              <p class="hero__intro-detail">Through automation and leaner operations.</p>
+            </div>
+            <div class="hero__intro-item hero__intro-item--security">
+              <p class="hero__intro-heading"><strong>Security by design</strong></p>
+              <p class="hero__intro-detail">Identity, encryption, and governance from day one, not bolted on later.</p>
+            </div>
+          </div>
+          <div class="hero__actions">
+            <a href="#contact" class="btn btn--primary">Get expert guidance</a>
+            <a href="#services" class="btn btn--ghost">See where we go deep</a>
+          </div>
+          <ul class="hero__stats hero__stats--promise" role="list">
+            <li><strong>Lower IT cost</strong><span>Automation, FinOps, less waste</span></li>
+            <li><strong>Data protected</strong><span>Encrypt, IAM, compliance-ready</span></li>
+            <li><strong>Clear ROI</strong><span>Savings and risk you can show</span></li>
+          </ul>
+        </div>
+        <aside class="hero__aside" aria-label="Example operational view">
+          <div class="terminal">
+            <div class="terminal__chrome">
+              <span class="terminal__dot terminal__dot--r" aria-hidden="true"></span>
+              <span class="terminal__dot terminal__dot--y" aria-hidden="true"></span>
+              <span class="terminal__dot terminal__dot--g" aria-hidden="true"></span>
+              <span class="terminal__title">stackai status · production</span>
+            </div>
+            <pre class="terminal__body"><code><span class="terminal__prompt">$</span> stackai health check --region all
+
+<span class="terminal__ok">●</span> identity_sync     <span class="terminal__dim">OK</span>  <span class="terminal__muted">142ms</span>
+<span class="terminal__ok">●</span> collab_tenant     <span class="terminal__dim">OK</span>  <span class="terminal__muted">Teams / Zoom / Google</span>
+<span class="terminal__ok">●</span> data_posture      <span class="terminal__dim">OK</span>  <span class="terminal__muted">encrypt · DLP · IAM</span>
+<span class="terminal__ok">●</span> backup_jobs       <span class="terminal__dim">OK</span>  <span class="terminal__muted">immutable</span>
+<span class="terminal__warn">●</span> cost_guardrails   <span class="terminal__dim">review</span>  <span class="terminal__muted">2 budgets</span>
+
+<span class="terminal__prompt">$</span> stackai automate suggest --itspend
+<span class="terminal__dim">→</span> 3 workflows · est. <span class="terminal__accent">-18%</span> ticket handle time</code></pre>
+          </div>
+        </aside>
+      </div>
+      <div class="wrap hero__stack">
+        <aside class="hero__who" aria-label="Who we serve">
+          <span class="hero__who-mark" aria-hidden="true">◇</span>
+          <p class="hero__who-text"><strong>Small businesses and large enterprises.</strong> Same engineering standards; engagement sized to your footprint.</p>
+        </aside>
+        <div class="hero-panel">
+          <section class="hero-panel__section" aria-labelledby="hero-practice-heading">
+            <h2 class="hero-panel__heading" id="hero-practice-heading">Practice coverage</h2>
+            <p class="hero-panel__lead">
+              <span class="hero-panel__icon" aria-hidden="true">◇</span>
+              <span class="hero-panel__lead-text"><strong>Senior practitioners</strong> in each practice below: identity, cloud, security, collaboration at scale, automation, and day-two operations. Not a generic ticket queue.</span>
+            </p>
+            <ul class="hero-panel__chips hero-panel__chips--practices" aria-label="Practice areas">
+              <li>Managed IT</li>
+              <li>Greenfield setup</li>
+              <li>Collaboration</li>
+              <li>Cloud &amp; IaC</li>
+              <li>Cyber &amp; compliance</li>
+              <li>AI &amp; automation</li>
+              <li>Data &amp; BI</li>
+              <li>DevOps</li>
+              <li>BCDR</li>
+            </ul>
+          </section>
+          <div class="hero-panel__divider" aria-hidden="true"></div>
+          <section class="hero-panel__section" aria-labelledby="hero-platforms-heading">
+            <h2 class="hero-panel__heading" id="hero-platforms-heading">Platforms &amp; tooling</h2>
+            <p class="hero-panel__sub">Design, migrate, run.</p>
+            <ul class="hero-panel__chips hero-panel__chips--stack" aria-label="Technologies we work with">
+              <li>Microsoft 365 / Entra ID</li>
+              <li>Google Workspace</li>
+              <li>Zoom · Webex</li>
+              <li>AWS · Azure · GCP</li>
+              <li>Terraform · IaC</li>
+              <li>Kubernetes</li>
+              <li>Python · APIs</li>
+              <li>ITSM · SIEM</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section id="build" class="section section--surface">
+      <div class="wrap split split--surface">
+        <div class="split__text">
+          <p class="section__kicker">Greenfield · new offices · spin-outs</p>
+          <h2 class="section__title section__title--left section__title--line">We <span class="gradient-text">set up your IT</span> from the ground up</h2>
+          <p class="section__desc section__desc--left">
+            New company, site, or spin-out: <strong>identity, devices, network, collaboration, security</strong>, documented and ready for your team or managed services. Scales from <strong>one site</strong> to <strong>many regions</strong> without improvising controls.
+          </p>
+          <ul class="feature-list feature-list--dense">
+            <li>
+              <strong>Identity &amp; access</strong>
+              Entra / Okta / Google: SSO, conditional access, joiner-mover-leaver.
+            </li>
+            <li>
+              <strong>Devices</strong>
+              Intune, Jamf, or equivalent: enroll, patch, encrypt, lost-device flows.
+            </li>
+            <li>
+              <strong>Network</strong>
+              Wi-Fi, Zero Trust/VPN, DNS, segmentation, monitoring from day one.
+            </li>
+            <li>
+              <strong>Productivity</strong>
+              Email, chat, files, meetings ready before go-live.
+            </li>
+            <li>
+              <strong>Security &amp; resilience</strong>
+              Backups, logging, baselines, runbooks (no tribal ops).
+            </li>
+          </ul>
+        </div>
+        <div class="split__visual">
+          <div class="diagram diagram--setup">
+            <div class="diagram__node diagram__node--root">Your business</div>
+            <div class="diagram__branch">
+              <span class="diagram__edge" aria-hidden="true"></span>
+              <div class="diagram__row">
+                <div class="diagram__node diagram__node--sm">Identity</div>
+                <div class="diagram__node diagram__node--sm">Devices</div>
+                <div class="diagram__node diagram__node--sm">Network</div>
+              </div>
+              <div class="diagram__row">
+                <div class="diagram__node diagram__node--sm">Collab</div>
+                <div class="diagram__node diagram__node--sm">Security</div>
+                <div class="diagram__node diagram__node--sm">Backup</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="collab" class="section section--alt">
+      <div class="wrap split">
+        <div class="split__visual split__visual--first-mobile">
+          <div class="collab-board">
+            <header class="collab-board__head">
+              <span class="collab-board__badge">Managed</span>
+              <div class="collab-board__head-copy">
+                <p class="collab-board__title">Collaboration estate</p>
+                <p class="collab-board__lede">What we run, at a glance.</p>
+              </div>
+            </header>
+            <ul class="collab-board__rows">
+              <li class="collab-board__row">
+                <div class="collab-board__row-line">
+                  <span class="collab-board__topic">Video &amp; meetings</span>
+                  <span class="collab-board__vendors" title="Platforms">Teams · Zoom · Google Meet · Webex</span>
+                </div>
+                <p class="collab-board__focus"><span class="collab-board__focus-label">Coverage</span><span class="collab-board__focus-text">QoS, recordings, meeting rooms, PSTN</span></p>
+              </li>
+              <li class="collab-board__row">
+                <div class="collab-board__row-line">
+                  <span class="collab-board__topic">Chat &amp; hubs</span>
+                  <span class="collab-board__vendors">Slack · Teams · Google Chat</span>
+                </div>
+                <p class="collab-board__focus"><span class="collab-board__focus-label">Coverage</span><span class="collab-board__focus-text">Workspaces, retention, search</span></p>
+              </li>
+              <li class="collab-board__row">
+                <div class="collab-board__row-line">
+                  <span class="collab-board__topic">Files &amp; content</span>
+                  <span class="collab-board__vendors">SharePoint · OneDrive · Google Drive</span>
+                </div>
+                <p class="collab-board__focus"><span class="collab-board__focus-label">Coverage</span><span class="collab-board__focus-text">Sharing, DLP, lifecycle</span></p>
+              </li>
+              <li class="collab-board__row">
+                <div class="collab-board__row-line">
+                  <span class="collab-board__topic">Accounts &amp; guests</span>
+                  <span class="collab-board__vendors">Entra · Google · Zoom · Slack SSO</span>
+                </div>
+                <p class="collab-board__focus"><span class="collab-board__focus-label">Coverage</span><span class="collab-board__focus-text">Federation, B2B, external access</span></p>
+              </li>
+              <li class="collab-board__row">
+                <div class="collab-board__row-line">
+                  <span class="collab-board__topic">Licensing &amp; sprawl</span>
+                  <span class="collab-board__vendors">M365 · Workspace · Zoom · Slack</span>
+                </div>
+                <p class="collab-board__focus"><span class="collab-board__focus-label">Coverage</span><span class="collab-board__focus-text">SKU fit, reclamation, overlap control</span></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="split__text">
+          <p class="section__kicker">Teams · Zoom · Google · Slack · Webex &amp; more</p>
+          <h2 class="section__title section__title--left section__title--line">We <span class="gradient-text">manage your collaboration</span> platforms end-to-end</h2>
+          <p class="section__desc section__desc--left">
+            Mixed estates are normal: <strong>Teams, Zoom, Workspace, Slack, Webex</strong>. We run and govern the <strong>whole stack</strong> so policy, guests, files, and licensing stay consistent and auditable.
+          </p>
+          <ul class="checklist checklist--tight">
+            <li>Roadmap: coexistence, migration, clean retire of overlap</li>
+            <li>Meetings/telephony health across vendors, hybrid or standardized</li>
+            <li>Retention, eDiscovery, labels, DLP aligned per platform</li>
+            <li>Apps, guests, ITSM provisioning under one policy model</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section section--surface">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="section__kicker section__kicker--center">Engineering-led delivery</p>
+          <h2 class="section__title">Full-spectrum <span class="gradient-text">IT services</span></h2>
+          <p class="section__desc">
+            <strong>Practitioner-led</strong> in every box: design, migrate, operate, improve. Right-sized teams, same bar on quality. <strong>Cost</strong>- and <strong>security</strong>-conscious delivery.
+          </p>
+        </header>
+        <div class="cards cards--3">
+          <article class="card">
+            <p class="card__tag">Operations</p>
+            <div class="card__icon" aria-hidden="true">◈</div>
+            <h3 class="card__title">Managed IT &amp; Support</h3>
+            <p class="card__text">Desk, endpoints, patching, vendors, SLAs tuned to you (not generic scripts).</p>
+          </article>
+          <article class="card">
+            <p class="card__tag">Infrastructure</p>
+            <div class="card__icon" aria-hidden="true">☁</div>
+            <h3 class="card__title">Cloud &amp; Infrastructure</h3>
+            <p class="card__text">Architecture, migration, FinOps, hybrid, containers, IaC: repeatable, auditable.</p>
+          </article>
+          <article class="card">
+            <p class="card__tag">Security</p>
+            <div class="card__icon" aria-hidden="true">◉</div>
+            <h3 class="card__title">Cybersecurity &amp; Compliance</h3>
+            <p class="card__text">Zero trust, IAM, SOC workflows, vulnerability management, auditor-ready frameworks.</p>
+          </article>
+          <article class="card">
+            <p class="card__tag">Connectivity</p>
+            <div class="card__icon" aria-hidden="true">⎔</div>
+            <h3 class="card__title">Networks &amp; Connectivity</h3>
+            <p class="card__text">LAN/WAN, SD-WAN, Wi-Fi, VPN, monitoring, performance for distributed sites.</p>
+          </article>
+          <article class="card">
+            <p class="card__tag">Platform</p>
+            <div class="card__icon" aria-hidden="true">⟲</div>
+            <h3 class="card__title">DevOps &amp; Platform Engineering</h3>
+            <p class="card__text">CI/CD, GitOps, releases, parity, self-service for developers.</p>
+          </article>
+          <article class="card">
+            <p class="card__tag">Software</p>
+            <div class="card__icon" aria-hidden="true">⌗</div>
+            <h3 class="card__title">Custom Software &amp; APIs</h3>
+            <p class="card__text">Internal tools, integrations, APIs: connect systems without spreadsheet chaos.</p>
+          </article>
+          <article class="card">
+            <p class="card__tag">Data</p>
+            <div class="card__icon" aria-hidden="true">▤</div>
+            <h3 class="card__title">Data, BI &amp; Analytics</h3>
+            <p class="card__text">Pipelines, warehouse, dashboards, governed reporting: one truth.</p>
+          </article>
+          <article class="card">
+            <p class="card__tag">Resilience</p>
+            <div class="card__icon" aria-hidden="true">⏻</div>
+            <h3 class="card__title">Backup &amp; Disaster Recovery</h3>
+            <p class="card__text">Immutable backups, drills, RTO/RPO, runbooks for real incidents.</p>
+          </article>
+          <article class="card card--featured">
+            <p class="card__tag">Workplace</p>
+            <div class="card__icon" aria-hidden="true">◎</div>
+            <h3 class="card__title">Digital workplace &amp; collaboration</h3>
+            <p class="card__text">Ongoing ops across <strong>Teams, Zoom, Workspace, Slack, Webex</strong>: identity, devices, meetings, files, guests, policy (single vendor or multi-platform).</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="ai" class="section">
+      <div class="wrap split">
+        <div class="split__text">
+          <p class="section__kicker">AIOps · workflow automation · LLM-assisted runbooks</p>
+          <h2 class="section__title section__title--left section__title--line">AI &amp; <span class="gradient-text">automation that reduces IT costs</span></h2>
+          <p class="section__desc section__desc--left">
+            <strong>Savings on the P&amp;L</strong>, not an excuse to weaken security. Smarter workflows, guardrails, audit trails, least privilege: non-negotiable.
+          </p>
+          <ul class="feature-list">
+            <li>
+              <strong>Lower run-rate spend</strong>
+              Less ticket/provision time, better cloud/SaaS use, automation instead of repetitive engineer hours.
+            </li>
+            <li>
+              <strong>AI-assisted ops</strong>
+              Alert grouping, hints, summaries: faster fixes, less triage burn.
+            </li>
+            <li>
+              <strong>Workflow automation</strong>
+              ITSM, chat, mail, cloud APIs: fewer swivel-chair steps and errors.
+            </li>
+            <li>
+              <strong>Self-service &amp; safe rollout</strong>
+              Runbooks and assistants grounded in your env; RBAC, logging, rollback so savings do not create shadow IT or audit gaps.
+            </li>
+          </ul>
+        </div>
+        <div class="split__visual">
+          <div class="orb-stack">
+            <div class="orb orb--1"></div>
+            <div class="orb orb--2"></div>
+            <div class="orb orb--3"></div>
+            <div class="glass-panel glass-panel--tech">
+              <p class="glass-panel__label">Automation loop</p>
+              <ol class="glass-panel__steps">
+                <li><code class="inline-code">observe</code> signals &amp; SLOs</li>
+                <li><code class="inline-code">classify</code> &amp; route</li>
+                <li><code class="inline-code">act</code> or escalate</li>
+                <li><code class="inline-code">document</code> &amp; tune</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="transform" class="section section--alt">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="section__kicker section__kicker--center">Delivery model</p>
+          <h2 class="section__title">How we <span class="gradient-text">transform your business</span></h2>
+          <p class="section__desc">
+            <strong>Lower cost</strong>, <strong>safer data</strong>, faster delivery. We tie work to metrics (spend, incidents, RTO/RPO, controls) so finance, IT, and security tell one story.
+          </p>
+        </header>
+        <div class="timeline">
+          <div class="timeline__item">
+            <span class="timeline__step">01</span>
+            <h3>Discover &amp; prioritize</h3>
+            <p>Map systems, risks, cost leaks; sequence quick wins so savings fund bigger moves (security included).</p>
+          </div>
+          <div class="timeline__item">
+            <span class="timeline__step">02</span>
+            <h3>Design for simplicity</h3>
+            <p>Architectures and runbooks your team can run: automation, review, clear ownership as you grow.</p>
+          </div>
+          <div class="timeline__item">
+            <span class="timeline__step">03</span>
+            <h3>Ship in slices</h3>
+            <p>Ship in slices: migrate, harden, automate, prove value; bounded production risk.</p>
+          </div>
+          <div class="timeline__item">
+            <span class="timeline__step">04</span>
+            <h3>Operate &amp; improve</h3>
+            <p>Dashboards, RCAs, retros, AI insight: reliability and cost improve after go-live.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="managed" class="section section--surface">
+      <div class="wrap split split--reverse">
+        <div class="split__text">
+          <p class="section__kicker">NOC · ITSM · FinOps</p>
+          <h2 class="section__title section__title--left section__title--line"><span class="gradient-text">Managed IT</span> your leadership can trust</h2>
+          <p class="section__desc section__desc--left">
+            <strong>Fractional</strong> augments for smaller IT teams, or <strong>full managed ops</strong> with exec-ready reporting. Clear ownership: incidents, change, capacity, plain-language comms.
+          </p>
+          <ul class="checklist">
+            <li>Health view for critical services</li>
+            <li>Change: velocity with safety</li>
+            <li>Cloud and SaaS cost visibility</li>
+            <li>Security monitoring aligned to your policy</li>
+            <li>Roadmaps tied to business milestones</li>
+          </ul>
+        </div>
+        <div class="metric-cards">
+          <div class="metric-card">
+            <span class="metric-card__value">SLA</span>
+            <span class="metric-card__label">Clear response targets</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-card__value">RACI</span>
+            <span class="metric-card__label">No mystery ownership</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-card__value">RCA</span>
+            <span class="metric-card__label">Real postmortems</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section--contact">
+      <div class="wrap contact contact--unified">
+        <div class="contact__panel contact__panel--unified">
+          <p class="section__kicker section__kicker--center">Get in touch</p>
+          <h2 class="section__title contact__heading">Ready for <span class="gradient-text">expert-led IT &amp; AI</span>?</h2>
+          <p class="contact__lead contact__lead--center">
+            One email: goals and stack. Senior specialists in <strong>cloud, security, collaboration, automation, ops</strong>. Reply in about 1–2 business days. Say if you care most about <strong>cost</strong>, <strong>security</strong>, or both.
+          </p>
+          <div class="contact__single-action">
+            <a class="btn btn--primary btn--xl" href="mailto:stackai@zohomail.in?subject=StackAI%20expert%20inquiry&amp;body=Hello%20StackAI%2C%0A%0AWhat%20we%20need%20help%20with%20%28e.g.%20cloud%2C%20security%2C%20collab%2C%20automation%29%3A%20%0A%0ACurrent%20stack%3A%20%0A%0ATimeline%3A%20%0A">Email our specialists</a>
+            <p class="contact__direct">
+              <span class="contact__direct-label">Email</span>
+              <a class="contact__mailto" href="mailto:stackai@zohomail.in?subject=StackAI%20expert%20inquiry">stackai@zohomail.in</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__wrap">
+      <div class="footer__highlights">
+        <article class="footer__highlight footer__highlight--cost">
+          <p class="footer__highlight-label">Economics</p>
+          <h3 class="footer__highlight-title">Lower IT costs</h3>
+          <p class="footer__highlight-text">FinOps, automation, lean ops: savings you can trace.</p>
+        </article>
+        <article class="footer__highlight footer__highlight--sec">
+          <p class="footer__highlight-label">Trust</p>
+          <h3 class="footer__highlight-title">Secure data</h3>
+          <p class="footer__highlight-text">Encryption, identity, governance built into how we run your estate.</p>
+        </article>
+        <article class="footer__highlight footer__highlight--ai">
+          <p class="footer__highlight-label">Delivery</p>
+          <h3 class="footer__highlight-title">AI-powered delivery</h3>
+          <p class="footer__highlight-text">One team for cloud, collab, security, automation: fewer siloed hand-offs.</p>
+        </article>
+      </div>
+      <div class="footer__lower">
+        <div class="footer__brand-block">
+          <span class="logo logo--footer">Stack<span class="logo__ai">AI</span></span>
+          <p class="footer__tagline"><span class="tagline-accent">Lean IT</span>. Sealed data. AI-native.</p>
+        </div>
+        <nav class="footer__links" aria-label="Footer">
+          <a href="#services">Services</a>
+          <a href="#build">IT setup</a>
+          <a href="#collab">Collaboration</a>
+          <a href="#ai">AI</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <p class="footer__copy"><span class="footer__copyright">Copyright</span> © <time id="year"></time> StackAI. <span class="footer__rights">All rights reserved.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+(function () {
+  "use strict";
+
+  function updateCopyrightYear() {
+    var yearEl = document.getElementById("year");
+    if (!yearEl) return;
+    var y = String(new Date().getFullYear());
+    yearEl.textContent = y;
+    if (yearEl.tagName === "TIME") {
+      yearEl.dateTime = y;
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", updateCopyrightYear);
+  } else {
+    updateCopyrightYear();
+  }
+
+  var navToggle = document.querySelector(".nav-toggle");
+  var nav = document.querySelector(".nav");
+  if (navToggle && nav) {
+    navToggle.addEventListener("click", function () {
+      var open = nav.classList.toggle("is-open");
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    nav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        nav.classList.remove("is-open");
+        navToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduceMotion && "IntersectionObserver" in window) {
+    var sections = document.querySelectorAll(
+      ".section__head, .card, .timeline__item, .split__text, .glass-panel, .metric-card, .contact__panel, .hero-panel, .terminal, .diagram, .collab-board, .hero__main, .hero__focus, .hero__who, .footer__highlight"
+    );
+    sections.forEach(function (el) {
+      el.classList.add("reveal");
+    });
+    var obs = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
+    );
+    sections.forEach(function (el) {
+      obs.observe(el);
+    });
+  }
+})();
+
+</script>
+</body>
+</html>
